@@ -1,0 +1,146 @@
+.section.what {
+  padding-bottom: 120px;
+
+  .background {
+    background-image: url("../images/back6.svg");
+  }
+
+  .section__content {
+    .blocks {
+      flex-direction: column;
+      justify-content: space-between;
+      max-width: 610px;
+      margin-top: 35px;
+
+      .block {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px 30px 30px 90px;
+        margin-bottom: 30px;
+
+        h3:before {
+          content: "";
+          position: absolute;
+          display: block;
+          background-size: cover;
+          left: 40px;
+          transform: translate(0,-10%);
+          width: 40px;
+          height: 40px;
+        }
+        &:nth-child(1) h3:before{
+          background-image: url("../images/1s.svg");
+        }
+        &:nth-child(2) h3:before{
+          background-image: url("../images/2s.svg");
+        }
+        &:nth-child(3) h3:before{
+          background-image: url("../images/3s.svg");
+        }
+
+        h3 {
+          margin-bottom: 10px;
+        }
+        p {
+          text-align: left;
+        }
+      }
+
+      .button {
+        width: fit-content;
+        padding: 16px 30px;
+      }
+    }
+  }
+
+  .hsc {
+    position: absolute;
+    top: 107px;
+    right: 101px;
+  }
+
+  @media (max-width: map-get($grid-breakpoints, 'xl')) {
+    .section__content .blocks .block {
+      max-width: 532px;
+    }
+
+    .hsc {
+      width: 300px;
+      top: 100px;
+      right: 86px;
+    }
+  }
+  @media (max-width: map-get($grid-breakpoints, 'lg')) {
+    .section__content {
+      z-index: 1;
+
+      .blocks {
+        max-width: unset;
+        margin-top: 10px;
+
+        .block {
+          padding: 30px 30px 30px 60px;
+
+          h3:before {
+            left: 15px;
+          }
+          &:nth-child(1) {
+            max-width: 408px;
+          }
+          &:nth-child(2) {
+            max-width: 564px;
+          }
+          &:nth-child(3) {
+            max-width: unset;
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .hsc {
+      width: 236px;
+      top: 79px;
+      right: 62px;
+    }
+  }
+  @media (max-width: map-get($grid-breakpoints, 'md')) {
+    padding-bottom: 0;
+    align-items: center;
+
+    .background {
+      background-image: url("../images/back6Mobile.svg");
+    }
+
+    .section__content .blocks .block {
+      width: 100%;
+
+      &:nth-child(1) {
+        max-width: 540px;
+      }
+      &:nth-child(2) {
+        max-width: 540px;
+      }
+      &:nth-child(3) {
+        max-width: 540px;
+      }
+    }
+
+    h2 {
+      order: -1;
+      margin-bottom: 15px;
+    }
+
+    .hsc {
+      position: unset;
+      order: -1;
+      max-width: 230px;
+      width: 100%;
+    }
+  }
+  @media (max-width: map-get($grid-breakpoints, 'sm')) {
+    .background {
+      background-image: url("../images/back6Mobile.svg");
+    }
+  }
+}

@@ -1,0 +1,94 @@
+.footer {
+  background-color: $gray;
+  color: $white;
+  padding: 50px 0 30px 0;
+
+  .wrap {
+    justify-content: center;
+    width: 700px;
+    margin: 0 auto;
+  }
+
+  a {
+    color: $white;
+    font-size: 20px;
+  }
+
+  li a svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  &__top {
+    margin-bottom: 20px;
+    align-items: flex-start;
+
+    ul li:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__bottom {
+    align-items: center;
+  }
+
+  &__copyright {
+    position: relative;
+    font-size: 12px;
+    line-height: 16px;
+    padding-left: 22.5px;
+
+    &:before {
+      content: "";
+      position: absolute;
+      display: block;
+      background-size: cover;
+      width: 15px;
+      height: 15px;
+      left: 0;
+      background-image: url("../images/pacman.svg");
+    }
+  }
+
+  &__content {
+    & > div {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .social {
+    display: flex;
+    justify-content: space-between;
+    width: 340px;
+  }
+
+  @media (max-width: map-get($grid-breakpoints, 'md')) {
+    .wrap {
+      width: 270px;
+    }
+
+    &__top {
+      & > img {
+        margin-bottom: 20px;
+        align-self: flex-start;
+      }
+    }
+
+    a {
+      font-size: 16px;
+    }
+
+    &__content {
+      & > div {
+        flex-direction: column;
+      }
+
+      .social {
+        order: -1;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

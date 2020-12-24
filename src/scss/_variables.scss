@@ -1,0 +1,24 @@
+$white: #FFFFFF;
+$grayLight: #EAEAF8;
+$gray: #535764;
+$black: #222222;
+$blue: #3360FF;
+$shadow: rgba(95, 122, 190, 0.25);
+
+$font-open-sans: 'Open Sans', sans-serif;
+
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 575.98px,
+  md: 767.98px,
+  lg: 991.98px,
+  xl: 1259.98px
+);
+
+$grid-container: (
+  md: 570px,
+  lg: 750px,
+  xl: 990px,
+  exl: 1170px
+);

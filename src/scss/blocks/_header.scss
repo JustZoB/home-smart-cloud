@@ -1,0 +1,230 @@
+.header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  z-index: 20;
+  background-color: $grayLight;
+  box-shadow: 0px 4px 8px $shadow;
+
+  .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: map-get($grid-container, 'exl');
+    padding: 0 15px;
+    margin: 0 auto;
+
+    @media (max-width: map-get($grid-breakpoints, 'xl')) {
+      width: map-get($grid-container, 'xl');
+    }
+    @media (max-width: map-get($grid-breakpoints, 'lg')) {
+      width: map-get($grid-container, 'lg');
+    }
+  }
+
+  &__logo {
+    z-index: 1;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+
+    ul {
+      display: flex;
+      align-items: center;
+
+      a {
+        color: $blue;
+        text-decoration: none;
+        padding: 6px 0 3px 0;
+        font-size: 20px;
+        font-weight: bold;
+        border-bottom: 3px solid transparent;
+        cursor: pointer;
+
+        &:hover {
+          border-bottom: 3px solid $blue;
+        }
+        &:not(:last-child) {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+
+  .burger {
+    display: none;
+    align-items: center;
+  }
+
+  .burger-button_box {
+    display: flex;
+    position: relative;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin-left: 15px;
+
+    span,
+    span:before,
+    span:after {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background-color: $blue;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    span:before {
+      content: "";
+      top: -10px;
+    }
+
+    span:after {
+      content: "";
+      top: 10px;
+    }
+  }
+
+  .lang-switch {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    color: $blue;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top: 0;
+    width: 96px;
+
+    &:hover {
+      margin-top: 42px;
+
+      .switch {
+        display: block;
+      }
+    }
+
+    .switch,
+    .current {
+      position: relative;
+      padding: 10px 20px 10px 40px;
+
+      &:before {
+        content: "";
+        position: absolute;
+        display: block;
+        background-size: cover;
+        top: 50%;
+        left: 5px;
+        width: 30px;
+        transform: translate(0, -50%);
+        height: 20px;
+      }
+    }
+
+    .current {
+      cursor: alias;
+    }
+
+    .rus:before {
+      background-image: url("../images/ru.png");
+    }
+    .eng:before {
+      background-image: url("../images/en.png");
+    }
+
+    .switch {
+      display: none;
+      background-color: $grayLight;
+      color: $blue;
+      font-size: 20px;
+      font-weight: bold;
+      border-top: 2px solid $white;
+    }
+  }
+
+  @media (max-width: map-get($grid-breakpoints, 'lg')) {
+    &__nav {
+      transform: translateX(100%);
+      opacity: 0;
+      transition: 0.3s;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: $grayLight;
+      flex-direction: column;
+
+      align-items: flex-end;
+
+      ul {
+        flex-direction: column;
+        margin-top: 100px;
+        width: 100%;
+
+        a {
+          width: 100%;
+          margin: 0;
+          padding: 20px;
+          font-size: 20px;
+          line-height: 20px;
+          text-align: right;
+          border: 0;
+
+          &.active-menu {
+            border-bottom: 0;
+          }
+
+          &:hover {
+            border-bottom: 0;
+          }
+
+          &:not(:last-child) {
+            margin-right: 0;
+          }
+        }
+      }
+
+      .lang-switch {
+        display: none;
+      }
+    }
+
+    .active {
+      .burger-button_box {
+        span {
+          transform: rotate(45deg);
+        }
+
+        span:before {
+          top: 0;
+          transform: rotate(0);
+        }
+
+        span:after {
+          top: 0;
+          transform: rotate(90deg);
+        }
+      }
+
+      .header__nav {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .burger {
+      display: flex;
+    }
+  }
+}
