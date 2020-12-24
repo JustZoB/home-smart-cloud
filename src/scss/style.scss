@@ -26,6 +26,9 @@ body {
   .background {
     position: absolute;
     background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: top;
+    background-size: contain;
     top: 0;
     left: -50px;
     width: calc(100% + 100px);
@@ -61,10 +64,6 @@ body {
   @media (max-width: map-get($grid-breakpoints, 'xl')) {
     width: map-get($grid-container, 'xl');
     margin: 0 auto 160px auto;
-
-    .background {
-      background-size: contain;
-    }
   }
   @media (max-width: map-get($grid-breakpoints, 'lg')) {
     width: map-get($grid-container, 'lg');
@@ -82,13 +81,6 @@ body {
   @media (max-width: map-get($grid-breakpoints, 'sm')) {
     width: 100%;
     margin: 0 auto 80px auto;
-
-    .background {
-      background-position-x: center;
-      background-position-y: top;
-      background-size: auto;
-      //background-size: cover;
-    }
 
     &__content .blocks .block {
       padding: 24px;

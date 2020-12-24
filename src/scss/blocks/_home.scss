@@ -1,121 +1,53 @@
 .section.home {
-  margin-top: 100px;
+  justify-content: flex-start;
+  height: calc(100vh - 80px);
+  margin-bottom: 50px;
 
   .background {
     background-image: url("../images/back1.svg");
   }
 
   .section__content {
-    justify-content: flex-start;
-    flex-direction: column;
-    max-width: 375px;
-    min-height: 800px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    max-width: 100%;
+
+    img {
+      object-fit: contain;
+      max-width: 100%;
+    }
+
+    .left {
+      height: 100%;
+      padding-left: 15px;
+    }
+    .right {
+      height: 100%;
+      padding-right: 15px;
+    }
 
     h1 {
       display: none;
     }
-    .h1 {
-      margin: 55px 0 50px;
-      width: 100%;
-    }
-
-    p {
-      font-weight: bold;
-      font-size: 26px;
-      line-height: 36px;
-    }
-  }
-
-  .hsc {
-    position: absolute;
-    top: -30px;
-    right: 100px;
-  }
-
-  @media (max-width: map-get($grid-breakpoints, 'xl')) {
-    .section__content {
-      max-width: 307px;
-      min-height: 700px;
-
-      .h1 {
-        margin: 45px 0 30px;
-      }
-
-      p {
-        font-size: 24px;
-        line-height: 30px;
-      }
-    }
-
-    .hsc {
-      width: 380px;
-      right: 70px;
-    }
-  }
-  @media (max-width: map-get($grid-breakpoints, 'lg')) {
-    .section__content {
-      max-width: 237px;
-      min-height: 550px;
-
-      .h1 {
-        margin: 32px 0 24px;
-      }
-
-      p {
-        font-size: 22px;
-        line-height: 28px;
-      }
-    }
-
-    .hsc {
-      width: 300px;
-      right: 40px;
-    }
   }
   @media (max-width: map-get($grid-breakpoints, 'md')) {
-    .background {
-      left: -10px;
-    }
-
-    .section__content {
-      max-width: 222px;
-      min-height: 410px;
-
-      .h1 {
-        margin: 20px 0;
-      }
-
-      p {
-        font-size: 18px;
-        line-height: 24px;
-      }
-    }
-
-    .hsc {
-      width: 236px;
-      right: 6px;
-      top: -21px;
+    .right {
+      display: none;
     }
   }
   @media (max-width: map-get($grid-breakpoints, 'sm')) {
-    align-items: center;
+    justify-content: center;
+    padding: 0;
 
-    .background {
-      background-image: url("../images/back1Mobile.svg");
+    .left {
+      width: 100%;
+      height: 100%;
+      padding: 0 40px 0 15px;
     }
 
     .section__content {
-      max-width: 343px;
-      width: 100%;
-      min-height: 600px;
-
-      .h1 {
-        margin: 32px 0;
-      }
-    }
-
-    .hsc {
-      display: none;
+      height: auto;
     }
   }
 }
