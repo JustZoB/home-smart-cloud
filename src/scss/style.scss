@@ -1,0 +1,200 @@
+@import 'variables';
+@import 'reset.css';
+@import 'vendor';
+@import 'blocks';
+
+body {
+  color: $black;
+  background-color: $grayLight;
+  font-family: $font-open-sans;
+  overflow-x: hidden;
+
+  &.disableScroll {
+    overflow-y: hidden;
+  }
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  width: map-get($grid-container, 'exl');
+  margin: 0 auto 200px auto;
+  padding: 0 15px;
+
+  .background {
+    position: absolute;
+    background-repeat: no-repeat;
+    top: 0;
+    left: -50px;
+    width: calc(100% + 100px);
+    height: 100%;
+    z-index: -1;
+  }
+
+  &__content {
+    display: flex;
+    position: relative;
+
+    .blocks {
+      position: relative;
+      display: flex;
+      width: 100%;
+
+      .block {
+        position: relative;
+        display: flex;
+        align-items: center;
+        background-color: $white;
+        padding: 30px;
+        box-shadow: 0px 4px 8px $shadow;
+        border-radius: 10px;
+
+        p {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  @media (max-width: map-get($grid-breakpoints, 'xl')) {
+    width: map-get($grid-container, 'xl');
+    margin: 0 auto 160px auto;
+
+    .background {
+      background-size: contain;
+    }
+  }
+  @media (max-width: map-get($grid-breakpoints, 'lg')) {
+    width: map-get($grid-container, 'lg');
+    margin: 0 auto 130px auto;
+  }
+  @media (max-width: map-get($grid-breakpoints, 'md')) {
+    width: map-get($grid-container, 'md');
+    margin: 0 auto 100px auto;
+
+    .background {
+      width: calc(100% + 60px);
+      left: 0;
+    }
+  }
+  @media (max-width: map-get($grid-breakpoints, 'sm')) {
+    width: 100%;
+    margin: 0 auto 80px auto;
+
+    .background {
+      background-position-x: center;
+      background-position-y: top;
+      background-size: auto;
+      //background-size: cover;
+    }
+
+    &__content .blocks .block {
+      padding: 24px;
+    }
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $black;
+  font-weight: 800;
+}
+
+h1 {
+  font-size: 120px;
+  line-height: 130px;
+  max-width: 375px;
+}
+
+h2 {
+  font-size: 52px;
+  line-height: 60px;
+  margin-bottom: 50px;
+  text-align: center;
+
+  @media (max-width: map-get($grid-breakpoints, 'xl')) {
+    font-size: 42px;
+    line-height: 50px;
+    margin-bottom: 40px;
+  }
+  @media (max-width: map-get($grid-breakpoints, 'lg')) {
+    font-size: 36px;
+    line-height: 44px;
+    margin-bottom: 30px;
+  }
+  @media (max-width: map-get($grid-breakpoints, 'md')) {
+    font-size: 30px;
+    line-height: 38px;
+  }
+  @media (max-width: map-get($grid-breakpoints, 'sm')) {
+    font-size: 26px;
+    line-height: 34px;
+  }
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 28px;
+
+  @media (max-width: map-get($grid-breakpoints, 'lg')) {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+section {
+  p,
+  ul li,
+  ol li {
+    font-size: 24px;
+    line-height: 34px;
+
+    @media (max-width: map-get($grid-breakpoints, 'xl')) {
+      font-size: 20px;
+      line-height: 28px;
+    }
+    @media (max-width: map-get($grid-breakpoints, 'lg')) {
+      font-size: 18px;
+      line-height: 26px;
+    }
+    @media (max-width: map-get($grid-breakpoints, 'md')) {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+}
+
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+
+  &.button {
+    color: $white;
+    padding: 10px 20px;
+    background-color: $blue;
+    border-radius: 40px;
+    box-shadow: 0px 4px 8px $shadow;
+    border: 3px solid $blue;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+
+    &:hover {
+      color: $blue;
+      background-color: $grayLight;
+    }
+
+    @media (max-width: map-get($grid-breakpoints, 'md')) {
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+}

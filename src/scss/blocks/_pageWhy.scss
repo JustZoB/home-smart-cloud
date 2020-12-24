@@ -1,0 +1,62 @@
+.section.pageWhy {
+  margin-top: 70px;
+  padding-bottom: 20px;
+
+  .background {
+    background-image: url("../images/back8.svg");
+  }
+
+  .section__content {
+    justify-content: space-between;
+
+    .blocks {
+      flex-direction: column;
+      width: calc(50% - 10px);
+
+      &:nth-child(2) {
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      img {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+
+      .block {
+        margin-bottom: 30px;
+
+        p {
+          text-align: left;
+        }
+      }
+
+      .button {
+        width: fit-content;
+        padding: 16px 30px;
+        max-width: 300px;
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  .hsc {
+    position: absolute;
+    top: 107px;
+    right: 101px;
+  }
+
+  @media (max-width: map-get($grid-breakpoints, 'md')) {
+    .background {
+      background-image: url("../images/back8Mobile.svg");
+    }
+
+    .section__content {
+      flex-direction: column;
+
+      .blocks {
+        width: 100%;
+      }
+    }
+  }
+}

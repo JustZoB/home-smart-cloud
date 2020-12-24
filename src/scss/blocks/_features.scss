@@ -1,0 +1,100 @@
+.section.features {
+  .background {
+    background-image: url("../images/back5.svg");
+  }
+
+  .section__content {
+    padding-top: 40px;
+
+    .blocks {
+      justify-content: space-between;
+      padding-bottom: 20px;
+
+      .block {
+        justify-content: flex-start;
+        height: fit-content;
+        flex-direction: column;
+        padding: 70px 30px 30px 30px;
+        max-width: 360px;
+
+        &:before, &:after {
+          content: "";
+          position: absolute;
+          display: block;
+          background-size: cover;
+        }
+
+        &:before {
+          top: 0;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 120px;
+          height: 120px;
+        }
+        &:nth-child(1):before{
+          background-image: url("../images/1.svg");
+        }
+        &:nth-child(2):before{
+          background-image: url("../images/2.svg");
+        }
+        &:nth-child(3):before{
+          background-image: url("../images/3.svg");
+        }
+        &:nth-child(2):after {
+          bottom: -30px;
+          right: calc(50% - 18px);
+          width: 251px;
+          height: 50px;
+          background-image: url("../images/feat2.svg");
+        }
+        &:nth-child(3):after {
+          bottom: 35px;
+          right: calc(360px - 18px);
+          width: 478px;
+          height: 61px;
+          background-image: url("../images/feat3.svg");
+        }
+      }
+    }
+  }
+
+  @media (max-width: map-get($grid-breakpoints, 'xl')) {
+    .section__content .blocks .block {
+      max-width: 300px;
+
+      &:before {
+        width: 100px;
+        height: 100px;
+      }
+
+      &:nth-child(3):after {
+        right: calc(300px - 18px);
+      }
+    }
+  }
+  @media (max-width: map-get($grid-breakpoints, 'lg')) {
+    .section__content {
+      .blocks {
+        flex-direction: column;
+
+        .block {
+          max-width: unset;
+          width: 100%;
+
+          &:not(:last-child) {
+            margin-bottom: 80px;
+          }
+
+          &:before {
+            width: 100px;
+            height: 100px;
+          }
+
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

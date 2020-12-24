@@ -1,0 +1,60 @@
+.section.tasks {
+  .background {
+    background-image: url("../images/back2.svg");
+  }
+
+  .section__content {
+    .blocks {
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .block {
+        padding: 40px 30px;
+        max-width: 360px;
+        margin-bottom: 45px;
+        justify-content: center;
+
+        &:before {
+          content: "";
+          position: absolute;
+          display: block;
+          background-size: cover;
+          top: 0;
+          left: 0;
+          transform: translate(-40%, -25%);
+          width: 60px;
+          height: 60px;
+          background-image: url("../images/check.svg");
+        }
+      }
+    }
+  }
+
+  @media (max-width: map-get($grid-breakpoints, 'xl')) {
+    .section__content .blocks .block {
+      max-width: 300px;
+      margin-bottom: 25px;
+    }
+  }
+  @media (max-width: map-get($grid-breakpoints, 'lg')) {
+    .section__content .blocks {
+      justify-content: space-around;
+
+      .block {
+        max-width: 330px;
+      }
+    }
+  }
+  @media (max-width: map-get($grid-breakpoints, 'md')) {
+    .section__content .blocks .block {
+      max-width: unset;
+      width: 100%;
+      padding: 24px;
+
+      &:before {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+}
