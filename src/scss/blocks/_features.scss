@@ -97,4 +97,9 @@
       }
     }
   }
+  @media (max-width: map-get($grid-breakpoints, 'sm')) {
+    .background {
+      display: none;
+    }
+  }
 }

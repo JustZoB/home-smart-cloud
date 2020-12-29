@@ -113,6 +113,14 @@
       }
     }
 
+    &.active {
+      margin-top: 42px;
+
+      .switch {
+        display: block;
+      }
+    }
+
     .switch,
     .current {
       position: relative;
