@@ -5,9 +5,6 @@ if (menu) {
   const links = document.querySelectorAll(".smooth-scroll");
   const burgerButton = menu.querySelector(".burger-button_box");
 
-  const langSwitch = menu.querySelector(".header .lang-switch")
-  const lang = langSwitch.querySelector(".header .lang-switch .current");
-
   document.querySelector(".burger").addEventListener("click", () => {
     // Do nothing
     // Fixes safari event propagation error in iOS
@@ -40,9 +37,5 @@ if (menu) {
         }, 100);
       }
     });
-  });
-
-  lang.addEventListener("click", () => {
-    langSwitch.classList.toggle("active");
   });
 }
