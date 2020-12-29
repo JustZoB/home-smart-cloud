@@ -139,6 +139,10 @@
       }
     }
 
+    .current {
+      cursor: pointer;
+    }
+
     .rus:before {
       background-image: url("../images/ru.png");
     }
