@@ -8,6 +8,11 @@ if (menu) {
   const langSwitch = menu.querySelector(".header .lang-switch")
   const lang = langSwitch.querySelector(".header .lang-switch .current");
 
+  document.querySelector(".burger").addEventListener("click", () => {
+    // Do nothing
+    // Fixes safari event propagation error in iOS
+  });
+
   burgerButton.addEventListener("click", () => {
     menu.classList.toggle("active");
     body.classList.toggle("disableScroll");
