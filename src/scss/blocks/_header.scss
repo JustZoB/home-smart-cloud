@@ -60,7 +60,6 @@
   .burger {
     display: none;
     align-items: center;
-    pointer-events: none;
   }
 
   .burger-button_box {
@@ -138,10 +137,6 @@
         transform: translate(0, -50%);
         height: 20px;
       }
-    }
-
-    .current {
-      cursor: alias;
     }
 
     .rus:before {
