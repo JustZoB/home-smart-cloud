@@ -81,11 +81,16 @@ body {
   @media (max-width: map-get($grid-breakpoints, 'sm')) {
     width: 100%;
     margin: 0 auto 50px auto;
-    overflow: hidden;
 
     &__content .blocks .block {
       padding: 24px;
     }
+  }
+
+   @media
+   (max-width: map-get($grid-breakpoints, 'sm')),
+   (max-height: map-get($grid-breakpoints, 'sm')) {
+    overflow: hidden;
   }
 }
 
