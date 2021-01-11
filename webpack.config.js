@@ -39,7 +39,7 @@ module.exports = {
           outputPath: 'images',
           esModule: false,
           gifsicle: {
-            interlaced: false,
+            interlaced: true,
           }
         },
       },
