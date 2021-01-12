@@ -1,33 +1,41 @@
-const body = document.querySelector("body");
 const menu = document.querySelector(".header .wrap");
-const links = document.querySelectorAll(".smooth-scroll");
-const burgerButton = menu.querySelector(".burger-button_box");
 
-burgerButton.addEventListener("click", () => {
-  menu.classList.toggle("active");
-  body.classList.toggle("disableScroll");
-});
+if (menu) {
+  const body = document.querySelector("body");
+  const links = document.querySelectorAll(".smooth-scroll");
+  const burgerButton = menu.querySelector(".burger-button_box");
 
-links.forEach(link => {
-  link.addEventListener("click", () => {
-    const scrollTo = document.querySelector(link.getAttribute('data-href'));
+  document.querySelector(".burger").addEventListener("click", () => {
+    // Do nothing
+    // Fixes safari event propagation error in iOS
+  });
 
-    if (document.documentElement.clientWidth >= 992) {
-      scroll({
-        top: scrollTo.offsetTop - 125,
-        behavior: 'smooth',
-      });
-    }
+  burgerButton.addEventListener("click", () => {
+    menu.classList.toggle("active");
+    body.classList.toggle("disableScroll");
+  });
 
-    if (document.documentElement.clientWidth < 992) {
-      menu.classList.remove("active");
-      body.classList.remove("disableScroll");
-      setTimeout(function () {
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      const scrollTo = document.querySelector(link.getAttribute('data-href'));
+
+      if (document.documentElement.clientWidth >= 992) {
         scroll({
           top: scrollTo.offsetTop - 125,
           behavior: 'smooth',
         });
-      }, 100);
-    }
+      }
+
+      if (document.documentElement.clientWidth < 992) {
+        menu.classList.remove("active");
+        body.classList.remove("disableScroll");
+        setTimeout(function () {
+          scroll({
+            top: scrollTo.offsetTop - 125,
+            behavior: 'smooth',
+          });
+        }, 100);
+      }
+    });
   });
-});
+}

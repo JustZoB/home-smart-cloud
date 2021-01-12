@@ -17,15 +17,35 @@
   li a svg {
     width: 25px;
     height: 25px;
+
+    path {
+      fill: $white;
+    }
   }
 
   &__top {
     margin-bottom: 20px;
     align-items: flex-start;
 
-    ul li:not(:last-child) {
-      margin-bottom: 20px;
+    ul {
+      li:nth-child(3) {
+        a {
+          display: flex;
+          align-items: center;
+
+          svg {
+            margin-right: 10px;
+            margin-left: 5px;
+          }
+        }
+
+      }
+
+      li:not(:last-child) {
+        margin-bottom: 29px;
+      }
     }
+
   }
 
   &__bottom {
@@ -72,6 +92,22 @@
       & > img {
         margin-bottom: 20px;
         align-self: flex-start;
+      }
+
+      ul {
+        li:nth-child(3) {
+          a {
+            svg {
+              margin-right: 5px;
+              margin-left: 0;
+            }
+          }
+
+        }
+
+        li:not(:last-child) {
+          margin-bottom: 15px;
+        }
       }
     }
 

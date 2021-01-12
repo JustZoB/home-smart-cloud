@@ -67,7 +67,7 @@
   .cloud {
     position: absolute;
     top: 185px;
-    left: 0;
+    left: 30px;
   }
 
   @media (max-width: map-get($grid-breakpoints, 'xl')) {
