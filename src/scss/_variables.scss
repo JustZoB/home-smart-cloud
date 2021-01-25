@@ -6,6 +6,7 @@ $blue: #3360FF;
 $shadow: rgba(95, 122, 190, 0.25);
 
 $font-open-sans: 'Open Sans', sans-serif;
+$font-ubuntu: 'Ubuntu', sans-serif;
 
 
 $grid-breakpoints: (
@@ -17,6 +18,7 @@ $grid-breakpoints: (
 );
 
 $grid-container: (
+  sm: 100%,
   md: 570px,
   lg: 750px,
   xl: 990px,

@@ -1,18 +1,16 @@
 .footer {
   background-color: $gray;
   color: $white;
-  padding: 50px 0 30px 0;
+  padding: 30px 0 30px 0;
 
   .wrap {
     justify-content: center;
-    width: 700px;
+    width: map-get($grid-container, 'xl');
+    padding: 0 15px;
     margin: 0 auto;
   }
 
-  a {
-    color: $white;
-    font-size: 20px;
-  }
+
 
   li a svg {
     width: 25px;
@@ -24,32 +22,42 @@
   }
 
   &__top {
-    margin-bottom: 20px;
-    align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
 
-    ul {
-      li:nth-child(3) {
-        a {
-          display: flex;
-          align-items: center;
-
-          svg {
-            margin-right: 10px;
-            margin-left: 5px;
-          }
-        }
-
-      }
-
-      li:not(:last-child) {
-        margin-bottom: 29px;
-      }
+    a {
+      color: $white;
+      font-size: 20px;
     }
 
+    .item.customSVG {
+      a {
+        display: flex;
+        align-items: center;
+
+        svg {
+          margin-right: 10px;
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    li:not(:last-child) {
+      margin-right: 20px;
+    }
   }
 
   &__bottom {
-    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
   }
 
   &__copyright {
@@ -70,60 +78,78 @@
     }
   }
 
-  &__content {
-    & > div {
-      display: flex;
-      justify-content: space-between;
+  @media (max-width: map-get($grid-breakpoints, 'lg')) {
+    .wrap {
+      width: map-get($grid-container, 'lg');
     }
-  }
 
-  .social {
-    display: flex;
-    justify-content: space-between;
-    width: 340px;
+    &__top {
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .item:first-child,
+      .item:nth-child(2) {
+        margin: 0 30px 30px 0;
+      }
+    }
   }
 
   @media (max-width: map-get($grid-breakpoints, 'md')) {
     .wrap {
-      width: 270px;
+      width: map-get($grid-container, 'md');
     }
 
     &__top {
+      flex-direction: column;
+
+      a {
+        font-size: 16px;
+        line-height: 18px;
+      }
+
+      .item:first-child,
+      .item:nth-child(2) {
+        margin: 0;
+      }
+
+      .item:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+
+    &__social {
+      justify-content: flex-start;
+    }
+
+    &__bottom {
+      flex-direction: column;
+      align-items: flex-start;
+
       & > img {
-        margin-bottom: 20px;
-        align-self: flex-start;
-      }
-
-      ul {
-        li:nth-child(3) {
-          a {
-            svg {
-              margin-right: 5px;
-              margin-left: 0;
-            }
-          }
-
-        }
-
-        li:not(:last-child) {
-          margin-bottom: 15px;
-        }
-      }
-    }
-
-    a {
-      font-size: 16px;
-    }
-
-    &__content {
-      & > div {
-        flex-direction: column;
-      }
-
-      .social {
         order: -1;
-        width: 100%;
         margin-bottom: 20px;
+      }
+    }
+  }
+
+  @media (max-width: map-get($grid-breakpoints, 'sm')) {
+    .wrap {
+      width: map-get($grid-container, 'sm');
+    }
+
+    &__social {
+      justify-content: space-between;
+      max-width: 330px;
+
+      li {
+        &:not(:last-child) {
+          margin-right: 0;
+        }
+
+        a svg {
+          width: 20px;
+          height: 20px;
+        }
       }
     }
   }
