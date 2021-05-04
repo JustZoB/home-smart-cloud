@@ -1,3 +1,14 @@
+// .footer {
+//   li a svg {
+//     width: 25px;
+//     height: 25px;
+
+//     path {
+//       fill: $white;
+//     }
+//   }
+// }
+
 .footer {
   background-color: $gray;
   color: $white;
@@ -5,142 +16,118 @@
 
   .wrap {
     justify-content: center;
-    width: map-get($grid-container, 'xl');
-    padding: 0 15px;
+    width: map-get($grid-container, 'exl');
     margin: 0 auto;
   }
 
-  li a svg {
-    width: 25px;
-    height: 25px;
-
-    path {
-      fill: $white;
-    }
-  }
-
-  &__top {
+  &__mail {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 30px;
-
+    align-items: center;
+    
     a {
       color: $white;
-      font-size: 20px;
+
+      svg {
+        width: 25px;
+        height: 25px;
+        margin-right: 2px;
+  
+        path {
+          fill: $white;
+        }
+      }
     }
   }
 
-  &__social {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-
-    li:not(:last-child) {
-      margin-right: 20px;
-    }
-  }
-
-  &__bottom {
+  &__content {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
   }
 
   &__copyright {
     position: relative;
-    font-size: 12px;
-    line-height: 16px;
-    padding-left: 22.5px;
+    font-size: 18px;
+    line-height: 150%;
+    padding-left: 24px;
 
     &:before {
       content: "";
       position: absolute;
       display: block;
       background-size: cover;
-      width: 15px;
-      height: 15px;
+      top: 50%;
       left: 0;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
       background-image: url("../images/pacman.svg");
     }
   }
 
-  @media (max-width: map-get($grid-breakpoints, 'lg')) {
-    padding: 15px 0 30px 0;
+  &__logo__min {
+    display: none;
+  }
 
+  @media (max-width: map-get($grid-breakpoints, 'exl')) {
     .wrap {
-      width: map-get($grid-container, 'lg');
-    }
-
-    &__top {
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-bottom: 15px;
-
-      .item {
-        padding: 15px;
-      }
+      width: map-get($grid-container, 'exl');
     }
   }
 
-  @media (max-width: map-get($grid-breakpoints, 'md')) {
+  @media (max-width: map-get($grid-breakpoints, 'xl')) {
     .wrap {
-      width: map-get($grid-container, 'md');
+      width: map-get($grid-container, 'xl');
+    }
+  }
+
+  @media (max-width: map-get($grid-breakpoints, 'lg')) {
+    .wrap {
+      width: 367px;
     }
 
-    &__top {
-      flex-direction: column;
-
-      .item {
-        padding: 10px 0;
-      }
-
-      a {
-        font-size: 16px;
-        line-height: 18px;
-      }
+    &__content {
+      flex-wrap: wrap;
     }
 
-    &__social {
-      justify-content: flex-start;
-    }
-
-    &__bottom {
-      flex-direction: column;
-      align-items: flex-start;
-
-      & > a {
-        order: -1;
-        margin-bottom: 20px;
-      }
+    &__copyright {
+      margin-top: 20px;
+      order: 1;
     }
   }
 
   @media (max-width: map-get($grid-breakpoints, 'sm')) {
     .wrap {
-      width: map-get($grid-container, 'sm');
+      width: 266px;
     }
 
-    &__top {
-      a {
-        font-size: 14px;
-        line-height: 16px;
+    &__logo__min {
+      display: block;
+    }
+
+    &__logo__max {
+      display: none;
+    }
+
+    a {
+      font-size: 13px;
+    }
+
+    &__copyright {
+      font-size: 13px;
+      padding-left: 20px;
+
+      &:before {
+        width: 16px;
+        height: 16px;
       }
     }
 
-    &__social {
-      justify-content: space-between;
-      max-width: 300px;
-
-      li {
-        &:not(:last-child) {
-          margin-right: 0;
-        }
-
-        a svg {
-          width: 20px;
-          height: 20px;
-        }
+    &__mail {
+      a svg {
+        height: 16px;
       }
     }
   }
 }
+
