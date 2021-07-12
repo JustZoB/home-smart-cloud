@@ -46,13 +46,15 @@
           width: 251px;
           height: 50px;
           background-image: url("../images/feat2.svg");
+          background-position: right;
         }
         &:nth-child(3):after {
           bottom: 35px;
           right: calc(360px - 18px);
-          width: 478px;
+          width: 440px;
           height: 61px;
           background-image: url("../images/feat3.svg");
+          background-position: right;
         }
       }
     }
@@ -60,7 +62,17 @@
 
   @media (max-width: map-get($grid-breakpoints, 'xl')) {
     .section__content .blocks .block {
-      max-width: 300px;
+      &:nth-child(1) {
+        max-width: 245px;
+      }
+
+      &:nth-child(2) {
+        max-width: 290px;
+      }
+
+      &:nth-child(3) {
+        max-width: 305px;
+      }
 
       &:before {
         width: 100px;

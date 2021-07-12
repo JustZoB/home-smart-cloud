@@ -72,11 +72,11 @@
 
   @media (max-width: map-get($grid-breakpoints, 'xl')) {
     .section__content .blocks {
-      max-width: 628px;
+      max-width: 550px;
     }
 
     .cloud {
-      width: 300px;
+      width: 275px;
     }
 
     .section__content .blocks .block {
