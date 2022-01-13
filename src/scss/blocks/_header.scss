@@ -8,6 +8,7 @@
   z-index: 20;
   background-color: $grayLight;
   box-shadow: 0px 4px 8px $shadow;
+  font-family: $font-ubuntu;
 
   .wrap {
     display: flex;
@@ -39,6 +40,8 @@
       align-items: center;
 
       a {
+        display: flex;
+        align-items: center;
         color: $blue;
         text-decoration: none;
         padding: 6px 0 3px 0;
@@ -52,6 +55,10 @@
         }
         &:not(:last-child) {
           margin-right: 20px;
+        }
+
+        svg {
+          margin-right: 10px;
         }
       }
     }
@@ -103,10 +110,13 @@
     font-weight: bold;
     margin-left: 20px;
     margin-top: 0;
-    width: 96px;
+    width: 108px;
 
     &:hover {
-      margin-top: 42px;
+      margin-top: 52px;
+      background-color: $white;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px $shadow;
 
       .switch {
         display: block;
@@ -114,7 +124,7 @@
     }
 
     &.active {
-      margin-top: 42px;
+      margin-top: 47px;
 
       .switch {
         display: block;
@@ -124,7 +134,7 @@
     .switch,
     .current {
       position: relative;
-      padding: 10px 20px 10px 40px;
+      padding: 15px 20px 15px 55px;
 
       &:before {
         content: "";
@@ -132,7 +142,7 @@
         display: block;
         background-size: cover;
         top: 50%;
-        left: 5px;
+        left: 18px;
         width: 30px;
         transform: translate(0, -50%);
         height: 20px;
@@ -140,7 +150,7 @@
     }
 
     .current {
-      cursor: alias;
+      cursor: default;
     }
 
     .rus:before {
@@ -152,11 +162,24 @@
 
     .switch {
       display: none;
-      background-color: $grayLight;
+      background-color: $white;
       color: $blue;
       font-size: 20px;
+      border-radius: 0 0 20px 20px;
       font-weight: bold;
-      border-top: 2px solid $white;
+      border-top: 2px solid $grayLight;
+    }
+  }
+
+  @media (max-width: map-get($grid-breakpoints, 'xl')) {
+    .userArea {
+      svg {
+        margin: 0;
+      }
+
+      li {
+        display: none;
+      }
     }
   }
 
@@ -177,8 +200,8 @@
 
       ul {
         flex-direction: column;
-        margin-top: 100px;
-        width: 100%;
+        margin: 100px auto 0 auto;
+        width: map-get($grid-container, 'lg');
 
         a {
           width: 100%;
@@ -205,6 +228,16 @@
 
       .lang-switch {
         display: none;
+      }
+
+      .userArea {
+        svg {
+          margin-right: 10px;
+        }
+
+        li {
+          display: block;
+        }
       }
     }
 
@@ -233,6 +266,17 @@
 
     .burger {
       display: flex;
+    }
+  }
+
+  @media (max-width: map-get($grid-breakpoints, 'md')) {
+    &__nav ul {
+      width: map-get($grid-container, 'md');
+    }
+  }
+  @media (max-width: map-get($grid-breakpoints, 'sm')) {
+    &__nav ul {
+      width: map-get($grid-container, 'sm');
     }
   }
 }

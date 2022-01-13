@@ -1,6 +1,7 @@
 const menu = document.querySelector(".header .wrap");
+const nav = document.querySelector(".header__nav")
 
-if (menu) {
+if (nav) {
   const body = document.querySelector("body");
   const links = document.querySelectorAll(".smooth-scroll");
   const burgerButton = menu.querySelector(".burger-button_box");

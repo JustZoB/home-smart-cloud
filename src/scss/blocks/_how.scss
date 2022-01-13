@@ -72,11 +72,18 @@
 
   @media (max-width: map-get($grid-breakpoints, 'xl')) {
     .section__content .blocks {
-      max-width: 628px;
+      max-width: 550px;
     }
 
     .cloud {
-      width: 300px;
+      width: 275px;
+    }
+
+    .section__content .blocks .block {
+      ul li:before,
+      ol li:before {
+        top: -5px;
+      }
     }
   }
   @media (max-width: map-get($grid-breakpoints, 'lg')) {
@@ -87,6 +94,13 @@
     .cloud {
       width: 250px;
       left: 20px;
+    }
+
+    .section__content .blocks .block {
+      ul li:before,
+      ol li:before {
+        top: -6px;
+      }
     }
   }
   @media (max-width: map-get($grid-breakpoints, 'md')) {
@@ -106,6 +120,13 @@
       margin-bottom: 24px;
       max-width: 300px;
       width: 100%;
+    }
+
+    .section__content .blocks .block {
+      ul li:before,
+      ol li:before {
+        top: -8px;
+      }
     }
   }
 }

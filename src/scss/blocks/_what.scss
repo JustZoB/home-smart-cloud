@@ -62,13 +62,13 @@
 
   @media (max-width: map-get($grid-breakpoints, 'xl')) {
     .section__content .blocks .block {
-      max-width: 532px;
+      max-width: 500px;
     }
 
     .hsc {
-      width: 310px;
-      top: 100px;
-      right: 86px;
+      width: 281px;
+      top: 92px;
+      right: 74px;
     }
   }
   @media (max-width: map-get($grid-breakpoints, 'lg')) {
